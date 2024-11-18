@@ -12,7 +12,7 @@ end tflipflopAsyncClearPreset;
 architecture logic of tflipflopAsyncClearPreset is
 	signal Qt : std_logic;
 begin
-	process (clk, T, Cl, Pr)
+	process (clk, Cl, Pr)
 	begin
 		if Cl = '1' then
 				Qt <= '0';  -- Asynchronous Clear
@@ -24,6 +24,6 @@ begin
 			end if;
 		end if;
 	end process;
-		Q <= Qt;
-		Qn <= not(Qt);
+	Q <= Qt;
+	Qn <= not(Qt);
 end logic;
