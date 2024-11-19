@@ -10,7 +10,7 @@ Entity Lab8 is
 End Lab8;
 
 Architecture UpCounter of Lab8 is
-    component TFlipFlopAsyncLowClrPr
+    component T_FF
         Port(
             CLK, T, CL, PR : IN std_logic;
             Q, Qn : out std_logic
@@ -21,10 +21,10 @@ Architecture UpCounter of Lab8 is
     signal Qn0, Qn1, Qn2, Qn3 : std_logic;
 
 Begin
-    stage0: TFlipFlopAsyncLowClrPr port map(CLK, En, CLRn, PRn, Q0, Qn0); 
-    stage1: TFlipFlopAsyncLowClrPr port map(CLK, (En and Q0), CLRn, PRn, Q1, Qn1); 
-    stage2: TFlipFlopAsyncLowClrPr port map(CLK, (En and Q0 and Q1), CLRn, PRn, Q2, Qn2); 
-    stage3: TFlipFlopAsyncLowClrPr port map(CLK, (En and Q0 and Q1 and Q2), CLRn, PRn, Q3, Qn3); 
+    stage0: T_FF port map(CLK, En, CLRn, PRn, Q0, Qn0); 
+    stage1: T_FF port map(CLK, (En and Q0), CLRn, PRn, Q1, Qn1); 
+    stage2: T_FF port map(CLK, (En and Q0 and Q1), CLRn, PRn, Q2, Qn2); 
+    stage3: T_FF port map(CLK, (En and Q0 and Q1 and Q2), CLRn, PRn, Q3, Qn3); 
 
     Q(0) <= Q0; 
     Q(1) <= Q1; 
