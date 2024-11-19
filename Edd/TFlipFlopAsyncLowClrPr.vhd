@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity TFlipFlop is
+entity TFlipFlopAsyncLowClrPr is
     port (
         CLK, T, CL, PR : IN std_logic;
         Q, Qn : OUT std_logic
     );
-end TFlipDlop;
+end TFlipFlopAsyncLowClrPr;
 
-architecture upLogic of TFlipDlop is
+architecture upLogic of TFlipFlopAsyncLowClrPr is
     signal Qt : std_logic;
 begin
     process (CLK, T, CL, PR)
